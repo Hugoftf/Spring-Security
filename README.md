@@ -19,7 +19,7 @@
 
 ## Sobre
 
-Entendendo e se aprofundando em Spring Security, iremos usar como base já um projeto nosso [API-Rest](#https://github.com/Hugoftf/API-Rest) estruturado com API pronta, e também já mapeado com Spring Data
+Entendendo e se aprofundando em Spring Security, iremos usar como base já um projeto nosso [API-Rest](https://github.com/Hugoftf/API-Rest) estruturado com API pronta, e também já mapeado com Spring Data
 
 
 ## Inicio
