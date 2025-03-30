@@ -13,7 +13,7 @@
  
 ## Tecnologias Usadas
 
-[Java](https://www.java.com/pt-BR/) / [Spring](https://spring.io/projects/spring-boot) / [Docker](https://www.docker.com/) / [PostgresSQL](https://www.postgresql.org/) / [Pgadmin4](https://www.pgadmin.org/download/pgadmin-4-windows/)
+[Java](https://www.java.com/pt-BR/) / [Spring](https://spring.io/projects/spring-boot) / [Docker](https://www.docker.com/) / [PostgresSQL](https://www.postgresql.org/) / [Pgadmin4](https://www.pgadmin.org/download/pgadmin-4-windows/) / [Thymeleaf](https://www.thymeleaf.org/) / [HTML5](https://pt.wikipedia.org/wiki/HTML5)
  / [Postman](https://www.postman.com/)
 
 
@@ -57,5 +57,44 @@ Para começar a configurar na camada de segurança, precisamos criar uma classe 
 ![imagem local](/imagem_readme/confing_Security/class_SecurityConfiguration_and_metodo.png)
 
 
+### Configurando formulario de login
+
+
+Antes de começar a configurar o formulario de login, precisamos primeiro adicionar o starter do Thymeleaf:
+
+
+![imagem local](/imagem_readme/starter_thymeleaf.png)
+
+
+"O Thymeleaf é um mecanismo de templates para o Spring Boot, usado para processar e renderizar páginas HTML no lado do servidor. Ele permite a criação de páginas dinâmicas, integrando dados do backend diretamente no HTML."
+
+Logo em seguida precisamos criar uma pasta chamada templates(exatamente como esse nome se não vai retornar erro) dentro da pasta resources. O thymeleaf irá procurar essa pasta para acessar nossos arquivos html. Em seguida criaremos um arquivo chamado login.html com o formato de html, e usar uma codificação simples de html para um formulario com configurações do thymeleaf:
+
+
+![imagem local](/imagem_readme/login_html.png)
+
+
+Agora iremos criar uma classe chamada WebConfiguration:
+
+
+![imagem local](/imagem_readme/confing_Security/classe_webConfiguration.png)
+
+
+Também anotada com @Configuration, e também a anotação @EnableWebMVC ela é usada para ativar a configuração avançada do Spring MVC. Seguido de uma implementação de interface WebMvcConfigure, para habilitar configurações do spring. O metodo addViewController é um metodo sobrescrito da interface que vai servi para settar as confirações feita no arquivo html.
+
+Seguido para criação de uma nova classe na camada controller:
+
+
+![imagem local](/imagem_readme/controller/classe_loginviewcontroller.png)
+
+
+Ela servirá como ponte para quando vizermos uma requisição para http://localhost:8080/login, entrar para nossa pagina de login configurada no nosso spring. 
+
+
+O último detalhe do sistema uma pequena mudança no metodo SecurityFilterChain:
+
+img
+
+Para editar, ao inves do padrão, chamar o nosso que foi personalizado. 
 
 
