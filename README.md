@@ -45,7 +45,7 @@ Essa é a chave de segurança do nosso sistema, por padrão ao adicionar o start
 Para conseguirmos utilizar nosso programa necessitamos inserir um usuario e senha, por padrão o usuario é "user", e a senha a cada vez que o programa for iniciado, irá gerar uma senha diferente. Depois de autenticar, podemos realizar operações no programa:
 
 
-![imagem local](/imagem_readme//retorno_com_sucesso_postman.png)
+![imagem local](/imagem_readme/retorno_com_sucesso_postman.png)
 
 
 ## Configuração
@@ -54,7 +54,7 @@ Para conseguirmos utilizar nosso programa necessitamos inserir um usuario e senh
 Para começar a configurar na camada de segurança, precisamos criar uma classe para anotar com a @Configuration, ela será um Bean na nossa aplicação, e também será anotada com o @EnableWebSecurity ela vai servi para habilitar as ferramentas de configuração de security na nossa aplicação, e um metodo do tipo SecurityFilterChain que " é responsável por definir e personalizar a cadeia de filtros de segurança do Spring Security. Ele é usado para configurar autenticação, autorização e outros aspectos da segurança na aplicação".
 
 
-![imagem local](//imagem_readme/confing_Security/class_SecurityConfiguration_and_metodo.png)
+![imagem local](/imagem_readme/confing_Security/class_SecurityConfiguration_and_metodo.png)
 
 
 
