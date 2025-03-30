@@ -128,7 +128,7 @@ Testando na página de login:
 O retorno da requisição:
 
 
-[imagem local](/imagem_readme/retornos/retorno_depois_de_login.png)
+![imagem local](/imagem_readme/retornos/retorno_depois_de_login.png)
 
 
 
