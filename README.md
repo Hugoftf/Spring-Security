@@ -93,8 +93,41 @@ Ela servirá como ponte para quando vizermos uma requisição para http://localh
 
 O último detalhe do sistema uma pequena mudança no metodo SecurityFilterChain:
 
-img
+
+![imagem local](imagem_readme/confing_Security/metodo_securityFileterChain_editando_login.png)
+
 
 Para editar, ao inves do padrão, chamar o nosso que foi personalizado. 
+
+E o resultado é:
+
+
+![imagem local](imagem_readme/retornos/pagina_login_bowser.png)
+
+
+
+### Criação de Usuarios e Autenticação de senhas
+
+
+Na nossa calsse SecurityConfiguration, teremos que criar um metodo para configurar e adicionar usuarios:
+
+img
+
+Não tem muito segredo para criar usuario e senha, porém o tipo de retorno, InMemoryUserDetailsManager, indica que os usuarios estão sendo criado em um banco de dados em memoria, existem outros tipos de retornos porém como é apenas para testar iremos fazer em um banco de dados em memoria, o metodo PasswordEncoder serve para criptogradfar as senhas, o retorno do metodo é o padrão, nele tem o parametro 10, que irá ditar quantas vezes a senha será criptografada.
+
+Agora basta testar, a primeira coisa que você irá reparar é que como criamos usuarios ele não irá entregar o hash simples do basic.
+
+Testando na página de login:
+
+
+[imagem local](/imagem_readme/retornos/pagina_login_bowser_com_user.png)
+
+
+O retorno da requisição:
+
+
+[imagem local](/imagem_readme/retornos/retorno_depois_de_login.png)
+
+
 
 
