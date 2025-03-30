@@ -111,7 +111,9 @@ E o resultado é:
 
 Na nossa calsse SecurityConfiguration, teremos que criar um metodo para configurar e adicionar usuarios:
 
-img
+
+![imagem local](/imagem_readme/confing_Security/metodos_para_criacao_usuario_autent_senhas.png)
+
 
 Não tem muito segredo para criar usuario e senha, porém o tipo de retorno, InMemoryUserDetailsManager, indica que os usuarios estão sendo criado em um banco de dados em memoria, existem outros tipos de retornos porém como é apenas para testar iremos fazer em um banco de dados em memoria, o metodo PasswordEncoder serve para criptogradfar as senhas, o retorno do metodo é o padrão, nele tem o parametro 10, que irá ditar quantas vezes a senha será criptografada.
 
@@ -120,7 +122,7 @@ Agora basta testar, a primeira coisa que você irá reparar é que como criamos 
 Testando na página de login:
 
 
-[imagem local](/imagem_readme/retornos/pagina_login_bowser_com_user.png)
+![imagem local](imagem_readme/retornos/pagina_login_bowser_com_user.png)
 
 
 O retorno da requisição:
