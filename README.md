@@ -7,6 +7,7 @@
   - [Tecnologias Usadas](#Tecnologias-Usadas)
   - [Sobre](#Sobre)
   - [Inicio](#Inicio)
+  - [Configurações de Segurança](#Configuração)
   
 
  
@@ -45,4 +46,16 @@ Para conseguirmos utilizar nosso programa necessitamos inserir um usuario e senh
 
 
 ![imagem local](/imagem_readme//retorno_com_sucesso_postman.png)
+
+
+## Configuração
+
+
+Para começar a configurar na camada de segurança, precisamos criar uma classe para anotar com a @Configuration, ela será um Bean na nossa aplicação, e também será anotada com o @EnableWebSecurity ela vai servi para habilitar as ferramentas de configuração de security na nossa aplicação, e um metodo do tipo SecurityFilterChain que " é responsável por definir e personalizar a cadeia de filtros de segurança do Spring Security. Ele é usado para configurar autenticação, autorização e outros aspectos da segurança na aplicação".
+
+
+![imagem local](//imagem_readme/confing_Security/class_SecurityConfiguration_and_metodo.png)
+
+
+
 
