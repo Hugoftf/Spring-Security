@@ -7,13 +7,15 @@ com\github\Hugoftf\Spring\JPA\controller\dto\ErroResposta.class
 com\github\Hugoftf\Spring\JPA\controller\AutorController.class
 com\github\Hugoftf\Spring\JPA\controller\mappers\LivroMapper.class
 com\github\Hugoftf\Spring\JPA\exceptions\RegistroDuplicadoException.class
+com\github\Hugoftf\Spring\JPA\SpringSecurityApplication.class
 com\github\Hugoftf\Spring\JPA\exceptions\OperacaoNaoPermitida.class
 com\github\Hugoftf\Spring\JPA\controller\mappers\LivroMapperImpl.class
 com\github\Hugoftf\Spring\JPA\model\Livro.class
 com\github\Hugoftf\Spring\JPA\controller\dto\ResultadoPesquisaLivroDTO.class
+com\github\Hugoftf\Spring\JPA\repository\specs\LivroSpecs.class
 com\github\Hugoftf\Spring\JPA\controller\common\GlobalExceptioHandler.class
-com\github\Hugoftf\Spring\JPA\SpringJpaApplication.class
 com\github\Hugoftf\Spring\JPA\controller\mappers\AutorMapperImpl.class
+com\github\Hugoftf\Spring\JPA\service\validator\LivroValidator.class
 com\github\Hugoftf\Spring\JPA\controller\LivroController.class
 com\github\Hugoftf\Spring\JPA\model\GeneroLivro.class
 com\github\Hugoftf\Spring\JPA\service\AutorService.class
