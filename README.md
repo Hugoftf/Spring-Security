@@ -220,7 +220,38 @@ No PostgreSQL, ficou assim:
 Repare que a senha está sendo criptografada.
 
 
+### Testando Requisições com Novos Usuarios
 
+
+Antes de começar a testar as requisições com os novos usuarios precisamos primeiro autenticar o login do usuario. Para iremos criar a classe CustomDetalisService:
+
+
+![imagem local](/imagem_readme/security/classe_CustomUserDetalisService.png)
+
+
+Refatorar nosso metodo UserDatalisService do pacote security config:
+
+
+![imagem local](/imagem_readme/confing_Security/metodo_UserDetalisService_refatorado.png)
+
+
+E agora sim podemos testar a autenticação do usuario e os metodos de requisição.
+
+
+Primeiro testando com o admin, fazendo um GET para autores:
+
+
+![imagem local](/imagem_readme/Postman/GET_teste_usuario_fazendo_requisição.png)
+
+
+Repare que funciona, já que o Admin está autorizado a fazer esse tipo de operação. Quando testando com a role Tecnico o retorno é esse:
+
+
+![imagem local](/imagem_readme/Postman/GET_teste_usuario_fazendo_requisição_com_tecnico.png)
+
+
+
+O retorno da como não permitido.
 
 
 
