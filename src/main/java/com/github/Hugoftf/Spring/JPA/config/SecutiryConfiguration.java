@@ -31,6 +31,8 @@ public class SecutiryConfiguration {
                 .httpBasic(Customizer.withDefaults())
                 .authorizeHttpRequests(authorize ->{
                     authorize.requestMatchers("/login").permitAll();
+                    authorize.requestMatchers(HttpMethod.POST, "/usuarios/**").permitAll();
+
                     authorize.requestMatchers(HttpMethod.DELETE, "/autores/**").hasRole("ADMIN");
                     authorize.requestMatchers(HttpMethod.PUT, "/autores/**").hasRole("ADMIN");
                     authorize.requestMatchers(HttpMethod.POST, "/autores/**").hasRole("ADMIN");

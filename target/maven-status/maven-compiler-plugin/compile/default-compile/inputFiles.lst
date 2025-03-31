@@ -1,10 +1,13 @@
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\dto\ErroCampo.java
+C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\repository\UsuarioRepository.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\service\validator\AutorValidator.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\service\validator\LivroValidator.java
+C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\mappers\UsuarioMapper.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\config\DatabaseConfiguration.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\common\GlobalExceptioHandler.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\dto\ErroResposta.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\exceptions\OperacaoNaoPermitida.java
+C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\service\UsuarioService.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\config\WebConfiguration.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\service\LivroService.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\exceptions\RegistroDuplicadoException.java
@@ -17,7 +20,9 @@ C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Securi
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\config\SecutiryConfiguration.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\AutorController.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\mappers\AutorMapper.java
+C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\UsuarioController.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\repository\LivroRepository.java
+C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\dto\UsuarioDTO.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\mappers\LivroMapper.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\dto\ResultadoPesquisaLivroDTO.java
 C:\Users\HP\Documents\workspace-spring-tool-suite-4-4.25.0.RELEASE\Spring-Security\src\main\java\com\github\Hugoftf\Spring\JPA\controller\dto\AutorDTO.java
