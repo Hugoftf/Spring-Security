@@ -1,5 +1,7 @@
 package com.github.Hugoftf.Spring.JPA.config;
 
+import com.github.Hugoftf.Spring.JPA.security.CustomUserDetailsService;
+import com.github.Hugoftf.Spring.JPA.service.UsuarioService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -51,20 +53,8 @@ public class SecutiryConfiguration {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder){
-        UserDetails user1 = User.builder()
-                .username("usuario")
-                .password(passwordEncoder.encode("123"))
-                .roles("USER")
-                .build();
-
-        UserDetails user2 = User.builder()
-                .username("admin")
-                .password(passwordEncoder.encode("321"))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(user1, user2);
+    public UserDetailsService userDetailsService(UsuarioService usuarioService){
+        return new CustomUserDetailsService(usuarioService);
     }
 
 }
