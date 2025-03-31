@@ -142,9 +142,48 @@ Umas das ações mais importante do spring securty é o gerenciamento de roles, 
 
 Com isso você delega ações de acordo com hierarquia ou area de estudo, tudo de acordo com sua estratégia de arquitetura, e se alguém tentar fazer alguma ação que não condiz com sua role, o spring retornar acesso negado:
 
-[img]
+
+![imagem local](/imagem_readme/Postman/POST_nao_autorizado.png)
 
 
+### Criando Usuario em outras camadas
+
+
+Agora iremos implementar o usuario em todas as camadas, para poder adicionar no banco de dados, delegar sua role para iniciar o processo de login a partir dos usuarios cadastrados.
+
+
+Para começar iremos criar uma Interface, UsuarioRepository na camada repository:
+
+
+![imagem local](/imagem_readme/Repositoriy/interface_usuariorepository.png)
+
+
+E também criamos um metodo findBylogin, será utilizado para comparar login e senha dos usuarios no banco de dados.
+
+Agora na camada Service, a classe Usuario Service:
+
+
+![imagem local](/imagem_readme/Service/classe_usuarioService.png)
+
+
+A classe possui a dependencia com o UsuarioRepository para que possamos fazer operações com o banco de dados, e também com passwordEncoder, para que antes do usuario ser salvo no banco de dados, a sua senha possar ser criptografada. 
+
+Agora, adotando o padrão DTO, criar o record UsuarioDTO:
+
+
+![imagem local](imagem_readme/DTO/record_usuarioDTO.png)
+
+
+E logo em seguida também criaremos o Mapper, para que o UsuarioDTO seja mepado para a entidade Usuario:
+
+
+![imagem local](/imagem_readme/Mapper/classe_usuarioMapper.png)
+
+
+Por fim na camada controller, UsuarioController:
+
+
+![imagem local](/imagem_readme/controller/classe_usuariocontroller.png)
 
 
 
