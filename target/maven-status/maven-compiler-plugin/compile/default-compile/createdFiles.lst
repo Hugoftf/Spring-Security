@@ -27,4 +27,5 @@ com\github\Hugoftf\Spring\JPA\service\validator\AutorValidator.class
 com\github\Hugoftf\Spring\JPA\controller\dto\ErroCampo.class
 com\github\Hugoftf\Spring\JPA\repository\LivroRepository.class
 com\github\Hugoftf\Spring\JPA\controller\mappers\AutorMapper.class
+com\github\Hugoftf\Spring\JPA\model\Usuario.class
 com\github\Hugoftf\Spring\JPA\config\DatabaseConfiguration.class
