@@ -131,5 +131,25 @@ O retorno da requisição:
 ![imagem local](/imagem_readme/retornos/retorno_depois_de_login.png)
 
 
+### Gerenciando Roles
+
+
+Umas das ações mais importante do spring securty é o gerenciamento de roles, isso vai permitir que apenas usuarios com roles especificas estão autorizados a fazer ações que condiz com sua role, para isso, alterei o metodo securityFielterChain:
+
+
+![imagem local](/imagem_readme/confing_Security/security_filter_chain_permissoes_para_roles.png)
+
+
+Com isso você delega ações de acordo com hierarquia ou area de estudo, tudo de acordo com sua estratégia de arquitetura, e se alguém tentar fazer alguma ação que não condiz com sua role, o spring retornar acesso negado:
+
+[img]
+
+
+
+
+
+
+
+
 
 
