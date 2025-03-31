@@ -198,14 +198,26 @@ Por fim na camada controller, UsuarioController:
 ![imagem local](/imagem_readme/controller/classe_usuariocontroller.png)
 
 
-Agora antes de iniciar e cadastrar, preciso da a permissão para todos no sistema ter a permissão de criar um usuario:
+Agora antes de iniciar e cadastrar, preciso dar a permissão a todos os usarios no sistema, criar outros usuario:
 
 
 
 ![imagem local](/imagem_readme/confing_Security/metodo_secutirity_filter_permisaoparatodos_usuario.png)
 
 
+Agora ao tentar dar um POST no postman para /usuarios, conseguiremos cadastrar usuarios no banco de dados:
 
+
+![imagem local](/imagem_readme/Postman/Post_salvandoUsuario.png)
+
+
+No PostgreSQL, ficou assim:
+
+
+![imagem local](/imagem_readme/Postgre/retorno_usuarios_salvos.png)
+
+
+Repare que a senha está sendo criptografada.
 
 
 
