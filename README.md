@@ -146,13 +146,25 @@ Com isso você delega ações de acordo com hierarquia ou area de estudo, tudo d
 ![imagem local](/imagem_readme/Postman/POST_nao_autorizado.png)
 
 
-### Criando Usuario em outras camadas
+### Criando Usuario em todas as camadas
 
 
 Agora iremos implementar o usuario em todas as camadas, para poder adicionar no banco de dados, delegar sua role para iniciar o processo de login a partir dos usuarios cadastrados.
 
 
-Para começar iremos criar uma Interface, UsuarioRepository na camada repository:
+Primeiro precisamos adionar uma dependencia no programa:
+
+
+![imagem local](/imagem_readme/dependencia_hypersistence.png)
+
+
+Ela vai servi especificamente para que quando mapearmos uma entidade, o spring consiga entender e transformar um tipo List em Array no banco de dados. Em seguida a criação da entidade Usuario:
+
+
+![imagem local](/imagem_readme/entidade/classe_usuario_mapeada.png)
+
+
+Agora criaremos uma Interface, UsuarioRepository na camada repository:
 
 
 ![imagem local](/imagem_readme/Repositoriy/interface_usuariorepository.png)
@@ -184,6 +196,17 @@ Por fim na camada controller, UsuarioController:
 
 
 ![imagem local](/imagem_readme/controller/classe_usuariocontroller.png)
+
+
+Agora antes de iniciar e cadastrar, preciso da a permissão para todos no sistema ter a permissão de criar um usuario:
+
+
+
+![imagem local](/imagem_readme/confing_Security/metodo_secutirity_filter_permisaoparatodos_usuario.png)
+
+
+
+
 
 
 
