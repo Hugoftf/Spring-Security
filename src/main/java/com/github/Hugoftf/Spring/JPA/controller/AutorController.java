@@ -11,6 +11,7 @@ import com.github.Hugoftf.Spring.JPA.service.AutorService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -35,6 +36,7 @@ public class AutorController {
 
 
     @PostMapping
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<Object> salvar(@RequestBody @Valid AutorDTO autorDTO){
 
         try {
@@ -56,6 +58,7 @@ public class AutorController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<AutorDTO> obterDetalhes(@PathVariable("id") String id){
         UUID idAutor = UUID.fromString(id);
 
@@ -67,6 +70,7 @@ public class AutorController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<Object> deletarAutor(@PathVariable("id") String id){
        try {
            var idColetado = UUID.fromString(id);
@@ -86,6 +90,7 @@ public class AutorController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<List<AutorDTO>> encontrandoPorNomeOuNacionalidade(
             @RequestParam(value = "nome", required = false) String nome,
             @RequestParam(value = "nacionalidade", required = false) String nacionalidade
@@ -105,6 +110,7 @@ public class AutorController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<Object> atualizandoAutor(@PathVariable("id") String id,
                                                    @RequestBody @Valid AutorDTO autorDTO){
 

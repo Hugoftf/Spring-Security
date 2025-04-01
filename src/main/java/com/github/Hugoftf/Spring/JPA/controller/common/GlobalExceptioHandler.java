@@ -5,6 +5,7 @@ import com.github.Hugoftf.Spring.JPA.controller.dto.ErroResposta;
 import com.github.Hugoftf.Spring.JPA.exceptions.OperacaoNaoPermitida;
 import com.github.Hugoftf.Spring.JPA.exceptions.RegistroDuplicadoException;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -38,6 +39,12 @@ public class GlobalExceptioHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErroResposta handleRegistroDuplicadoException(RegistroDuplicadoException e){
         return ErroResposta.respostaPadrao(e.getMessage());
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public ErroResposta handleAccessDenidException(AccessDeniedException e){
+        return new ErroResposta(HttpStatus.FORBIDDEN.value(), e.getMessage(), List.of());
     }
 
     @ExceptionHandler(RuntimeException.class)
