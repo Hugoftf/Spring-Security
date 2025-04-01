@@ -282,6 +282,58 @@ E agora quando fazemos alguma operação em que o usuario não esteja autorizado
 ![imagem local](/imagem_readme/Postman/GET_teste_melhoria_nao_autorizado.png)
 
 
+#### Adicionando Relacionamento entre Autor e Usuario
+
+
+Existe uma coluna de Autor onde existe um relacionamento com usuario, para que quando um novo Autor for criado, a gente saberá qual foi o Usuario a quem criou.
+
+Para começar precisamos criar uma classe que vai servi para captar esse Usuario a quem fez a ação:
+
+
+![imagem local](/imagem_readme/security/classe_SecurityService.png)
+
+
+A classe tem um metodo de obterUsuario, em que usa o contexto do spring para capturar.
+
+Na entidade Autor, iremos atualizar o campo idUsuario:
+
+
+![imagem local](/imagem_readme/Service/classe_Autor_campo_idUsuario.png)
+
+
+Seguindo para camada service, iremos alterar o metodo salvar, antes adicionando uma dependencia com SecurityService:
+
+
+![imagem local](imagem_readme/Service/classe_AutorService.png)
+
+
+Agora no nosso Postman, ao adicionar um novo autor:
+
+
+![imagem local](/imagem_readme/Postman/POST_autor_com_idUsuario.png)
+
+
+Por fim no nosso PostgreSQL, iremos checar o retorno:
+
+
+![imagem local](/imagem_readme/Postgre/POST_autor_com_idUsuario_retorno.png)
+
+
+Realizado com sucesso. E quando realizamos um select para esse id você obtem o detalhe por completo:
+
+
+![imagem local](/imagem_readme/Postgre/usuario_where_id_igual.png)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
