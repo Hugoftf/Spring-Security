@@ -8,6 +8,9 @@
   - [Sobre](#Sobre)
   - [Inicio](#Inicio)
   - [Configurações de Segurança](#Configuração)
+  - [Criando Usuario em todas as camadas](#Criando-Usuario-em-todas-as-camadas)
+  - [Testando Requisições com Novos Usuarios](#Testando-Requisições-com-Novos-Usuarios)
+  - [Melhorias](#Melhorias)
   
 
  
@@ -146,7 +149,7 @@ Com isso você delega ações de acordo com hierarquia ou area de estudo, tudo d
 ![imagem local](/imagem_readme/Postman/POST_nao_autorizado.png)
 
 
-### Criando Usuario em todas as camadas
+## Criando Usuario em todas as camadas
 
 
 Agora iremos implementar o usuario em todas as camadas, para poder adicionar no banco de dados, delegar sua role para iniciar o processo de login a partir dos usuarios cadastrados.
@@ -220,7 +223,7 @@ No PostgreSQL, ficou assim:
 Repare que a senha está sendo criptografada.
 
 
-### Testando Requisições com Novos Usuarios
+## Testando Requisições com Novos Usuarios
 
 
 Antes de começar a testar as requisições com os novos usuarios precisamos primeiro autenticar o login do usuario. Para iremos criar a classe CustomDetalisService:
@@ -250,8 +253,38 @@ Repare que funciona, já que o Admin está autorizado a fazer esse tipo de opera
 ![imagem local](/imagem_readme/Postman/GET_teste_usuario_fazendo_requisição_com_tecnico.png)
 
 
-
 O retorno da como não permitido.
+
+## Melhorias
+
+
+Para começar com as melhorias, iremos deixar para que a propria operação no nosso controller delege qual role está autorizado, primeiro na SecutiryConfiguration iremos adicionar a anotação @EnabledMethodSecurity, ela vai servi para habilitar no nosso controller a opção de delegar qual role está autorizada a fazer tal operação. Ainda na classe, refatorar o metodo securityFilterChain, removendo alguns  request matcher:
+
+
+![imagem local](/imagem_readme/confing_Security/classe_SecurityConfiguration_com_anotacao_EnableMethodSecurity.png)
+
+
+Agora na camada controller, você adiciona a anotação PreAuthorize com o parametro de qual role você está autorizando a operação:
+
+
+![imagem local](/imagem_readme/controller/metodo_com_anotacao_PreAuthorize.png)
+
+
+Outra melhoria é personalizar o retorno da execption de não autorizado, apenas adicionando o um metodo na classe GlobalExceptioHandler:
+
+
+![imagem local](imagem_readme/Exception/metodo_handleAccessDenidException.png)
+
+
+E agora quando fazemos alguma operação em que o usuario não esteja autorizado retorno um corpo personalizado:
+
+
+![imagem local](/imagem_readme/Postman/GET_teste_melhoria_nao_autorizado.png)
+
+
+
+
+
 
 
 
