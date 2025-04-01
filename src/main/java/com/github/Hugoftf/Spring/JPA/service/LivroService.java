@@ -3,7 +3,9 @@ package com.github.Hugoftf.Spring.JPA.service;
 import com.github.Hugoftf.Spring.JPA.model.Autor;
 import com.github.Hugoftf.Spring.JPA.model.GeneroLivro;
 import com.github.Hugoftf.Spring.JPA.model.Livro;
+import com.github.Hugoftf.Spring.JPA.model.Usuario;
 import com.github.Hugoftf.Spring.JPA.repository.LivroRepository;
+import com.github.Hugoftf.Spring.JPA.security.SecurityService;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
@@ -24,12 +26,17 @@ import static com.github.Hugoftf.Spring.JPA.repository.specs.LivroSpecs.*;
 public class LivroService {
 
     private final LivroRepository livroRepository;
+    private final SecurityService securityService;
 
-    public LivroService(LivroRepository livroRepository){
+    public LivroService(LivroRepository livroRepository, SecurityService securityService){
         this.livroRepository = livroRepository;
+        this.securityService = securityService;
     }
 
     public Livro salvarLivro(Livro livro){
+
+        Usuario usuario = securityService.obterUsuario();
+        livro.setIdUsuario(usuario);
         return livroRepository.save(livro);
     }
 

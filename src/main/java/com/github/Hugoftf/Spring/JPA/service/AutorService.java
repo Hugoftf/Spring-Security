@@ -3,8 +3,10 @@ package com.github.Hugoftf.Spring.JPA.service;
 import com.github.Hugoftf.Spring.JPA.controller.dto.AutorDTO;
 import com.github.Hugoftf.Spring.JPA.exceptions.OperacaoNaoPermitida;
 import com.github.Hugoftf.Spring.JPA.model.Autor;
+import com.github.Hugoftf.Spring.JPA.model.Usuario;
 import com.github.Hugoftf.Spring.JPA.repository.AutorRepository;
 import com.github.Hugoftf.Spring.JPA.repository.LivroRepository;
+import com.github.Hugoftf.Spring.JPA.security.SecurityService;
 import com.github.Hugoftf.Spring.JPA.service.validator.AutorValidator;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -20,16 +22,20 @@ public class AutorService {
     private AutorRepository autorRepository;
     private AutorValidator autorValidator;
     private LivroRepository livroRepository;
+    private SecurityService securityService;
 
     public AutorService(AutorRepository autorRepository, AutorValidator autorValidator,
-                        LivroRepository livroRepository){
+                        LivroRepository livroRepository, SecurityService securityService){
         this.autorRepository = autorRepository;
         this.autorValidator = autorValidator;
         this.livroRepository =  livroRepository;
+        this.securityService = securityService;
     }
 
     public Autor salvar(Autor autor){
         autorValidator.validar(autor);
+        Usuario usuario = securityService.obterUsuario();
+        autor.setIdUsuario(usuario);
         return autorRepository.save(autor);
     }
 

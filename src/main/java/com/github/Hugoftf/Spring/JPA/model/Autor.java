@@ -43,8 +43,9 @@ public class Autor {
     @Column(name = "data_atualizacao")
     private LocalDateTime dataAtualizacao;
 
-    @Column(name = "id_usuario")
-    private UUID idUsuario;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario idUsuario;
 
     public UUID getId() {
         return id;
@@ -102,11 +103,11 @@ public class Autor {
         this.dataAtualizacao = dataAtualizacao;
     }
 
-    public UUID getIdUsuario() {
+    public Usuario getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(UUID idUsuario) {
+    public void setIdUsuario(Usuario idUsuario) {
         this.idUsuario = idUsuario;
     }
 

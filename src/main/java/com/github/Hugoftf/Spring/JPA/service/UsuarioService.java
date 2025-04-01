@@ -26,7 +26,7 @@ public class UsuarioService {
         usuarioRepository.save(usuario);
     }
 
-    public Usuario  obterPorLogin(String login){
+    public Usuario obterPorLogin(String login){
         return usuarioRepository.findByLogin(login);
     }
 }
